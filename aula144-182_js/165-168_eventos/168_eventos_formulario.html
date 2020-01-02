@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Evento - Teclado</title>
+
+  <script type="text/javascript">
+    //onfocus - acionado quando o elemento recebo o foco do cursor
+    //onblur - acionado quando o elemento perde o foco do cursor
+    //onchange - acionado quando o estado do elemento é modificado
+  </script>
+  
+</head>
+<body>
+  <input onfocus="alert('Foca nele!')" type="text" />
+  <input onblur="alert('Perca do foco')" type="text" />
+
+  <select onchange="alert('opção alterada')">
+    <option value="1">Primeiro</option>
+    <option value="2">Segundo</option>
+
+  </select>
+</body>
+</html>

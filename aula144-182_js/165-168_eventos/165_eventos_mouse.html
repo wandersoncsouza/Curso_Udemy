@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Eventos Mouse</title>
+
+  <script type="text/javascript">
+
+    //onclick - precisa do click efetivo para executar
+    //ondblclick - duplo click para executar
+    //onmousedown - independente de click completo ele executa
+    //onmouseover - quando o cursor sobrepoe o elemento
+    //onmouseout - quando o cursor sai da area do elemento
+
+    function msgBoasVindas(){
+      alert('Seja bem vindo. Você presionou e soltou o botão esquerdo do mouse sobre esse elemento!');
+    }
+    function doubleclick(){
+      alert('Isso foi um clique duplo!');
+    }
+    function apenasumclique(){
+      alert('Ops! Eu vi o seu clique!!!');
+    }
+    function sobreEle(){
+      alert('Você passou o mouse sobre este elemento.')
+    }
+    function vocetirou(){
+      alert('Tirou o mouse?')
+    }
+
+  </script>
+
+</head>
+<body>
+  <!-- <div onclick="alert('Teste')" style="background: #ccc; height: 150px; width:150px"></div> --> <!-- chamada direto na linha do codigo -->
+  <div onclick="msgBoasVindas()" style="background: #ccc; height: 150px; width:150px"></div> <!-- chamada a função -->
+  <div ondblclick="doubleclick()" style="background: #465; height: 150px; width:150px"></div>
+  <div onmousedown="apenasumclique()" style="background: #000; height: 150px; width:150px"></div>
+  <div onmouseover="sobreEle()" style="background: #777; height: 150px; width:150px"></div>
+  <div onmouseout="vocetirou()" style="background: #985; height: 150px; width:150px"></div>
+</body>
+</html>
