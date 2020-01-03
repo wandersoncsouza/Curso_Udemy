@@ -14,11 +14,11 @@
 
 				var num1 = document.getElementById('num1').value;
 				var num2 = document.getElementById('num2').value;
-
 				//forçando o tipo de variável
 				num1 = parseFloat(num1);
 				num2 = parseFloat(num2);
 
+				// validador de campos em branco
 				if(num1 == '' || num1 == null){
 					alert('Favor digitar um número válido para operação (num1)');
 					return false;
