@@ -60,13 +60,14 @@ function cria_baloes(qtde_baloes){
     balao.src = 'imagens/balao_azul_pequeno.png';
     balao.style.margin = '10px';
     balao.id = 'b'+i;
-    balao.onclick = function(){ estourar(this); }  // Ao clicar chamar a função estourar
+    balao.onclick = function(){ estourar(this); };  // Ao clicar chamar a função estourar "this" (este balão)
     document.getElementById('cenario').appendChild(balao);
   }
 }
 
 function estourar(e){
     var id_balao = e.id;
+    //document.getElementById(id_balao).setAtrribute("onclick", ""); // Limpa atributo onclick, impossibilitando clicar mais de uma vez no mesmo balao
     document.getElementById(id_balao).src = 'imagens/balao_azul_pequeno_estourado.png';
     pontuacao(-1);
 }
