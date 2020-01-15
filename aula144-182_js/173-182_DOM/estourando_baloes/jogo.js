@@ -67,7 +67,8 @@ function cria_baloes(qtde_baloes){
 
 function estourar(e){
     var id_balao = e.id;
-    //document.getElementById(id_balao).setAtrribute("onclick", ""); // Limpa atributo onclick, impossibilitando clicar mais de uma vez no mesmo balao
+
+    document.getElementById(id_balao).setAttribute("onclick", ""); // Limpa atributo onclick, impossibilitando clicar mais de uma vez no mesmo balao
     document.getElementById(id_balao).src = 'imagens/balao_azul_pequeno_estourado.png';
     pontuacao(-1);
 }
