@@ -48,6 +48,7 @@ function contagem_tempo(segundos){  //Inicio da função de contagem regressiva
 }
 
 function game_over(){
+    remove_eventos_baloes();
     alert('Fim de jogo. Você não conseguiu estourar todos os balões a tempo');
 }
 
@@ -67,7 +68,8 @@ function cria_baloes(qtde_baloes){
 
 function estourar(e){
     var id_balao = e.id;
-    //document.getElementById(id_balao).setAtrribute("onclick", ""); // Limpa atributo onclick, impossibilitando clicar mais de uma vez no mesmo balao
+
+    document.getElementById(id_balao).setAttribute("onclick", ""); // Limpa atributo onclick, impossibilitando clicar mais de uma vez no mesmo balao
     document.getElementById(id_balao).src = 'imagens/balao_azul_pequeno_estourado.png';
     pontuacao(-1);
 }
@@ -93,12 +95,23 @@ function pontuacao(acao){
 
 function situacao_jogo(baloes_inteiros){
     if(baloes_inteiros == 0){
-      alert('Parabéns! Você conseguiu estourar todos os balões a tempo.');
-      parar_jogo();
+    alert('Parabéns! Você conseguiu estourar todos os balões a tempo.');
+    parar_jogo();
     }
 }
 
 function parar_jogo(){
-  clearTimeout(timerId);
+    clearTimeout(timerId);
 
+}
+
+function remove_eventos_baloes(){
+    var i = 1; //contado para recuperar balões por id
+
+    //percorre o lementos de acordo com o id e só irá sair do laço quando não houver correspondência com elemento
+    while(document.getElementById('b'+i)) {
+    //retira o evento onclick do elemnto
+    document.getElementById('b'+i).onclick = '';
+    i++; //faz a iteração da variávei i
+    }
 }
