@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    header('Location: index.php?erro=1');
+}
+?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
 
@@ -31,12 +38,18 @@
 
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Sair</a></li>
+                    <li>
+                        <?= $_SESSION['usuario'] ?>
+                    </li>
+                    <li>
+                        <a href="sair.php">Sair</a>
+                    </li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
         </div>
     </nav>
+
 
 
     <div class="container">
@@ -45,9 +58,9 @@
 
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <h3>Usuário <?php $_POST['usuario'];?> autenticado.</h3>
+            <h3>Bem vindo </h3>
             <br />
-            
+
         </div>
         <div class="col-md-4"></div>
 
