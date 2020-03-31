@@ -13,7 +13,7 @@ if($resultado_id){
     $dados_usuario = mysqli_fetch_array($resultado_id);     // Recebe por estrutura de array() o resultado_id
     //var_dump($dados_usuario);
     if(isset($dados_usuario['usuario'])){                   // Teste condição usuario no banco de dados
-        echo 'Usuário existe';
+        header('Location: home.php');
     } else{
         header('Location: index.php?erro=1');               //Se usuario não existe informa na pagina principal com erro
     }
