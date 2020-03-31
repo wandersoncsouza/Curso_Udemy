@@ -6,8 +6,8 @@ $usuario = $_POST['usuario'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 
-$objDb = new db();
-$link = $objDb->conecta_mysql();
+$objDb = new db();                      //Instancia da classe db()
+$link = $objDb->conecta_mysql();        //Execução da função conecta_mysql()
 
 $sql = "INSERT INTO usuarios(usuario, email, senha) VALUES ('$usuario', '$email', '$senha')";
 //executar a query
