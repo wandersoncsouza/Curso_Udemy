@@ -9,27 +9,6 @@ $senha = md5($_POST['senha']);
 $objDb = new db();                      //Instancia da classe db()
 $link = $objDb->conecta_mysql();        //Execução da função conecta_mysql()
 
-// Verificar se o usuario já existe
-$sql = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
-if(mysqli_query($link, $sql)){
-
-    mysqli_fetch_array($resultado_id);
-}else{
-    echo 'Erro ao tentar localizar o registro de usuário';
-}
-
-
-
-
-
-// Verificar se e-mail já existe
-
-
-
-
-
-
-
 $sql = "INSERT INTO usuarios(usuario, email, senha) VALUES ('$usuario', '$email', '$senha')";
 //executar a query
 if(mysqli_query($link, $sql)){
